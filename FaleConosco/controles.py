@@ -10,7 +10,8 @@ def get_home():
 
 @FaleConosco_bp.route('/', methods=['POST'])
 def post_home():
-    print('chamou o post')
+
+    print('chamou o post', dict(request.form))
     dicionario = {'nome': request.form["name"],
                   'email': request.form["e-mail"],
                   'telefone': request.form["telefone"],
