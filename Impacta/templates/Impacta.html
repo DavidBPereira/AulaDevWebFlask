@@ -1,0 +1,348 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  body {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #00050b;
+    color: #ececec;
+    line-height: 2;
+    font-family: Montserrat, sans-serif;
+
+  }
+
+  .body {
+    margin: auto;
+    width: 1000px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+  }
+
+  .body>* {
+    margin: 0 1.5em;
+
+  }
+
+  h1 {
+    color: #116fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  h1:after {
+    width: 50px;
+    height: 3px;
+    background: #116fff;
+    display: block;
+    content: '';
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #116fff;
+    letter-spacing: 2px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  .bold {
+    color: #116fff;
+    font-weight: 600;
+  }
+
+
+  .about {
+    width: 60%;
+    padding: 25px;
+    background-color: #0d181d;
+    gap: 100px;
+  }
+
+  .side {
+    width: 40%;
+  }
+
+  .horario {
+    display: inline-block;
+    font-size: 15px;
+  }
+
+  .horario p {
+    margin: 0;
+    font-weight: bold;
+  }
+
+  .icons {
+    padding: 15px;
+    margin-right: 5px;
+    display: inline-block;
+    
+  }
+
+  .infos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .infos>* {
+    margin: 5px;
+  }
+
+  .infos span {
+    font-size: 15px;
+    line-height: 0;
+  }
+
+  .preco h2 {
+    font-size: 15px;
+    text-align: center;
+    color: #ececec;
+  }
+
+  .inscricao {
+    background: #0d181d;
+    width: 100%;
+  }
+
+  table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 15.5px;
+  }
+
+  thead {
+    background: #011219;
+    width: 100%;
+  }
+
+  thead th {
+    text-align: left;
+    padding: 0 5px;
+  }
+
+  thead th:nth-child(1) {
+    width: 30%;
+  }
+
+  thead th:nth-child(2) {
+    width: 70%;
+  }
+
+  tbody {
+    background: #122127;
+  }
+
+  tbody tr span {
+    font-weight: bold;
+    margin: 5px;
+  }
+
+  tbody td {
+    padding: 5px;
+  }
+
+  tbody td i {
+    font-size: 14px;
+    font-weight: light;
+    color: darkgrey
+  }
+
+
+  tbody td p {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .button {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    color: #e1e1e1;
+  }
+
+  .button button {
+    background: #f40946;
+    border: none;
+    border-radius: 25px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #ffff;
+    font-weight: bold;
+    padding: 10px 25px;
+  }
+
+  .link {
+    text-align: center;
+    padding: 0 0 20px 0;
+  }
+
+  .link a {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  .mais_infos {
+    display: flex;
+    justify-content: center;
+    margin: 2em;
+  }
+
+  .mais_infos button {
+    border-radius: 10px;
+    padding: 10px;
+    background: #ff5722;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .mais_infos a {
+    text-shadow: 2px 1px rgba(0, 0, 0, .3);
+    color: #ffff;
+    text-decoration: none;
+  }
+</style>
+
+<body>
+  <div class="body">
+    <div class="about">
+      <h1>sobre o curso</h1>
+      <p>O curso de Análise e Desenvolvimento de Sistemas da Faculdade Impacta foi reconhecido pelo ENADE/MEC como um
+        dos melhores da cidade de São Paulo.</p>
+
+      <p>Com a transformação digital e a área de tecnologia sempre em alta, o curso forma um profissional que possa se
+        envolver todas as etapas do projeto de sistemas de software, desde concepção, análise, projeto, teste, gestão,
+        implantação e manutenção sistemas de
+
+      <p>Atualmente, as carreiras mais demandadas pelo mercado de trabalho são para desenvolvedor web, mobile e a
+        Internet das Cois(IoT), além de profissionais com conhecimento em DevOps (Ambiente de Operação e
+        Desenvolvimento). </p>
+
+      <p>O profissional de DevOps precisa ter habilidades para fundir desenvolvimento e implantação de aplicativos em um
+        procesautomatizado, de entrega contínua, em que as responsabilidades são compartilhadas entre equipe de operação
+        e equipe desenvolvimento, facilitando o desenvolvimento, integração, entrega, processos de monitoramento
+        contínuos de software e a gestda infraestrutura de TI. </p>
+
+      <p>Para o trabalho do profissional de desenvolvimento web, mobile e IOT, aprende-se a programar em linguagens de
+        programação ou marcação, tais como: HTML, CSS, Javascript e Python, assim como frameworks relacionados e banco
+        de dados com SQL, para criação de aplicativos para sites, aplicativos móveis e IoT.</p>
+
+      <p>Os desenvolvedores precisam ainda entender os requisitos de negócio do cliente e fornecer recomendações para
+        melhorar os aplicativos ou sistemas de software, a fim de garantir que atendam às necessidades dos usuários ou
+        clientes. </p>
+
+      <p>Esses diferenciais na formação de habilidades e competências do nosso curso permitem aos alunos trabalharem em
+        empresas das mais variadas áreas de aplicações, ocupando carreiras como de analista de sistemas, analista de
+        requisitos, analista de negócio, desenvolvedor web, mobile ou IoT e DevOps, analista de teste e gerente de
+        projeto. </p>
+
+    </div>
+    <div class="side">
+      <h2> Tecnólogo</h2>
+      <div class="descricao">
+        <img class="icons" src="Imagens/ampulheta.png">
+        <div class="horario">
+          <p>Período:</p>
+          <span class="bold">Matutino</span><span>| 08h00 às 11h40 |</span>
+          <br>
+          <span class="bold">Noturno</span><span>| 19h00 às 22h40 |</span>
+        </div>
+      </div>
+
+      <div class="infos">
+        <img class="icons" src="Imagens/calendario.png">
+        <div id="duracao">
+          <span class="sub-title">Duração:</span><br>
+          <span class="bold">5 Semestres</span>
+        </div>
+
+        <img class="icons" src="Imagens/silhueta.png">
+        <div id="modalidade">
+          <span class="sub-title">Modalidade:</span><br>
+          <span class="bold">Presencial</span>
+        </div>
+
+        <img class="icons" src="Imagens/pin.png">
+        <div id="modalidade">
+          <span class="sub-title">Campus</span><br>
+          <span class="bold">Barra Funda</span>
+        </div>
+      </div>
+
+      <div class="preco">
+        <h2>Quanto vou investir no meu futuro?</h2>
+        <div class="inscricao">
+          <table>
+            <thead>
+              <tr>
+                <th>Período</th>
+                <th>Investimento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span>Matutino</span>
+                </td>
+                <td>
+                  <i>De: <s>R$ 744,96</s> - Preço Integral</i>
+                  <p class="bold">Por: R$ 707,71*</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span>Noturno</span>
+                </td>
+                <td>
+                  <i>De: <s>R$ 840,96</s> - Preço Integral</i>
+                  <p class="bold">Por: R$ 798,91*</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="button">
+            <button>Inscreva-se</button>
+          </div>
+          <div class="link">
+            <a href="">ou faça sua transferência</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mais_infos">
+        <button>
+          <a href="">Quer mais informações?</a>
+        </button>
+      </div>
+    </div>
+  </div>
+    {% endblock %}
+    Footer 
+    © 2022 GitHub, Inc.
+</body>
+
+</html>
