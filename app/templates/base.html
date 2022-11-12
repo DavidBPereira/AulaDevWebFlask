@@ -5,10 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+          table {
+            table-layout: fixed;
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            font-size: 15.5px;
+        }
+        .menu{
+            left: 10em;
+            float: left;
+            cursor: pointer;
+            display: block;
+        }
+        .menu div{
+            width: 32px;
+            height: 2px;
+            background: white;
+            margin: 8px;
+        }
+  
+    </style>
 </head>
 
 <body>
-    <div id="header"><a href="{{ url_for('Login.logout') }}">Sair</a></div>
+    <div id="header">
+        <table>
+            <tr>
+                <td style="width:70%;">
+                    <nav>
+                        <div class="menu">
+                            <div class="line1"></div>
+                            <div class="line2"></div>
+                            <div class="line3"></div>
+                        </div>
+                        <ul class='navlist'>
+                            <p>alguns de nossos cursos:</p>
+                            <li><a href="ads.html">Análise e Desenvolvimento de Sistemas</a></li>
+                            <li><a href="bd.html">Banco de dados</a></li> 
+                            <li><a href="eng-compute.html">Engenharia da Computação</a></li>
+                            <li><a href="sistema-info.html">Sistemas de informação</a></li>
+                            <li><a href="defesa-cibernetica.html">Defesa Cibernética - EAD</a></li>                    
+                        </ul>
+                    </nav>
+                </td>
+                <td style="width: 30%;">
+                    <a href="{{ url_for('Login.logout') }}">Sair</a>
+                </td>
+            </tr>
+        </table>        
+    </div>
     <div id="content">{% block conteudo %}{% endblock %}</div>
     
     <div id="footer"></div>

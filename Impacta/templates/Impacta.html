@@ -1,19 +1,5 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-
 <style>
   body {
     box-sizing: border-box;
@@ -125,13 +111,7 @@
     width: 100%;
   }
 
-  table {
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-    font-size: 15.5px;
-  }
+
 
   thead {
     background: #011219;
@@ -225,7 +205,7 @@
     color: #ffff;
     text-decoration: none;}
   
-    nav{
+    /* nav{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -266,22 +246,11 @@
   letter-spacing: 3px;
   margin-left: 10px;
   opacity: 0;
-}
+} */
 
-.menu{
-  position: absolute;
-  right: 10em;
-  float: right;
-  cursor: pointer;
-  display: block;
-}
+/* 
 
-.menu div{
-  width: 32px;
-  height: 2px;
-  background: white;
-  margin: 8px;
-}
+ */
 @keyframes navLinkFade {
   from {
     opacity: 0;
@@ -293,37 +262,17 @@
   }
 }
 
-.mobile-menu.active .line1 {
-  transform: rotate(-45deg) translate(-8px, 8px);
-}
 
-.mobile-menu.active .line2 {
+
+/* .mobile-menu.active .line2 {
   opacity: 0;
-}
+} */
 
-.mobile-menu.active .line3 {
+/* .mobile-menu.active .line3 {
   transform: rotate(45deg) translate(-5px, -7px);
-}
-  }
+} */
+  
 </style>
-<header>
-  <nav>
-    <div class="menu">
-      <div class="line1"></div>
-      <div class="line2"></div>
-      <div class="line3"></div>
-    </div>
-    <ul class='navlist'>
-      <p>alguns de nossos cursos:</p>
-      <li><a href="ads.html">Análise e Desenvolvimento de Sistemas</a></li>
-      <li><a href="bd.html">Banco de dados</a></li> 
-      <li><a href="eng-compute.html">Engenharia da Computação</a></li>
-      <li><a href="sistema-info.html">Sistemas de informação</a></li>
-      <li><a href="defesa-cibernetica.html">Defesa Cibernética - EAD</a></li>
- 
-    </ul>
-  </nav>
-</header>
 <body>
   <div class="body">
     <div class="about">
@@ -482,8 +431,6 @@
     ".navlist li",
   );
   mobileNavbar.init();
-  </script>
-  {% endblock %}
+  </script>  
 </body>
-
-</html>
+{% endblock %}
