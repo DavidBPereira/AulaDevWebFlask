@@ -33,14 +33,16 @@ def post_login():
     # salva os dados pertinentes à aplicação no
     session.update({id_sessao : sessao})
     # objeto de sessão do flask
-    usuarios = {'usuarioteste': 'teste@123'}
+    usuarios = {'usuario.teste': 'teste@123',
+    'David': '123'}
     v = validacao(sessao,usuarios)
     if v == True:
         resposta = make_response(redirect(url_for('Impacta.get_home')))
         resposta.set_cookie('id_sessao', id_sessao)
         return resposta
     else: 
-         return redirect(url_for('.get_login')) 
+        msg = f'Login inválido'
+        return redirect(url_for('.get_login'))
 
     
 

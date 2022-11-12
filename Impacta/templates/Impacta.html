@@ -223,10 +223,107 @@
   .mais_infos a {
     text-shadow: 2px 1px rgba(0, 0, 0, .3);
     color: #ffff;
-    text-decoration: none;
+    text-decoration: none;}
+  
+    nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 8vh;
+}
+
+.navlist p {
+  margin-top: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: rgb(8, 8, 8) 1px 1px 5px;
+}
+
+.navlist{
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 20vw;
+  height: 100vh;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: rgba(9, 9, 9, 0.16);
+  transform: translateX(100%);
+}
+
+.navlist.active{
+  transform: translateX(0);
+  z-index: 1;
+}
+.navlist li {
+  letter-spacing: 3px;
+  margin-left: 10px;
+  opacity: 0;
+}
+
+.menu{
+  position: absolute;
+  right: 10em;
+  float: right;
+  cursor: pointer;
+  display: block;
+}
+
+.menu div{
+  width: 32px;
+  height: 2px;
+  background: white;
+  margin: 8px;
+}
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
   }
 </style>
-
+<header>
+  <nav>
+    <div class="menu">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <ul class='navlist'>
+      <p>alguns de nossos cursos:</p>
+      <li><a href="ads.html">Análise e Desenvolvimento de Sistemas</a></li>
+      <li><a href="bd.html">Banco de dados</a></li> 
+      <li><a href="eng-compute.html">Engenharia da Computação</a></li>
+      <li><a href="sistema-info.html">Sistemas de informação</a></li>
+      <li><a href="defesa-cibernetica.html">Defesa Cibernética - EAD</a></li>
+ 
+    </ul>
+  </nav>
+</header>
 <body>
   <div class="body">
     <div class="about">
@@ -264,7 +361,7 @@
     <div class="side">
       <h2> Tecnólogo</h2>
       <div class="descricao">
-        <img class="icons" src="Imagens/ampulheta.png">
+        
         <div class="horario">
           <p>Período:</p>
           <span class="bold">Matutino</span><span>| 08h00 às 11h40 |</span>
@@ -274,19 +371,19 @@
       </div>
 
       <div class="infos">
-        <img class="icons" src="Imagens/calendario.png">
+        
         <div id="duracao">
           <span class="sub-title">Duração:</span><br>
           <span class="bold">5 Semestres</span>
         </div>
 
-        <img class="icons" src="Imagens/silhueta.png">
+        
         <div id="modalidade">
           <span class="sub-title">Modalidade:</span><br>
           <span class="bold">Presencial</span>
         </div>
 
-        <img class="icons" src="Imagens/pin.png">
+       
         <div id="modalidade">
           <span class="sub-title">Campus</span><br>
           <span class="bold">Barra Funda</span>
@@ -340,6 +437,52 @@
       </div>
     </div>
   </div>
+  <script>
+    class MobileNavbar {
+    constructor(mobileMenu, navList, navLinks) {
+      this.mobileMenu = document.querySelector(mobileMenu);
+      this.navList = document.querySelector(navList);
+      this.navLinks = document.querySelectorAll(navLinks);
+      this.activeClass = "active";
+  
+      this.handleClick = this.handleClick.bind(this);
+    }
+  
+    animateLinks() {
+      this.navLinks.forEach((link, index) => {
+        link.style.animation
+          ? (link.style.animation = "")
+          : (link.style.animation = `navLinkFade 0.3s ease forwards ${
+              index / 7 + 0.3
+            }s`);
+      });
+    }
+  
+    handleClick() {
+      this.navList.classList.toggle(this.activeClass);
+      this.mobileMenu.classList.toggle(this.activeClass);
+      this.animateLinks();
+    }
+  
+    addClickEvent() {
+      this.mobileMenu.addEventListener("click", this.handleClick);
+    }
+  
+    init() {
+      if (this.mobileMenu) {
+        this.addClickEvent();
+      }
+      return this;
+    }
+  }
+  
+  const mobileNavbar = new MobileNavbar(
+    ".menu",
+    ".navlist",
+    ".navlist li",
+  );
+  mobileNavbar.init();
+  </script>
   {% endblock %}
 </body>
 

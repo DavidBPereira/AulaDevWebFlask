@@ -1,18 +1,226 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
+<title>Tela de login</title>
+
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+header, footer{
+  width: 100%;
+  height: 10%;
+  background: rgba(9, 9, 9, 0.16);
+  position: absolute;
+}
+
+a{
+  color: white;
+  text-decoration: none;
+  transition: 0.3 s;
+}
+
+a:hover{
+  opacity: 0.7
+}
+
+.logo{
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 8vh;
+}
+
+.navlist p {
+  margin-top: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: rgb(8, 8, 8) 1px 1px 5px;
+}
+
+.navlist{
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 20vw;
+  height: 100vh;
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: rgba(9, 9, 9, 0.16);
+  transform: translateX(100%);
+}
+
+.navlist.active{
+  transform: translateX(0);
+  z-index: 1;
+}
+.navlist li {
+  letter-spacing: 3px;
+  margin-left: 10px;
+  opacity: 0;
+}
+
+.menu{
+  position: absolute;
+  right: 10em;
+  float: right;
+  cursor: pointer;
+  display: block;
+}
+
+.menu div{
+  width: 32px;
+  height: 2px;
+  background: white;
+  margin: 8px;
+}
+
+
+footer{
+  bottom: 0;
+}
+
+body{
+  /* background: radial-gradient(circle, rgba(0,147,233,1) 0%, rgba(1,21,38,1) 100%); */
+  background-color: #88aefd;
+  /*background-image: linear-gradient(165deg, #52E5E7 0%,  #130CB7 100%);*/
+  background-image:linear-gradient(165deg, #0d181d, #116fff);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.titulo{
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: rgb(8, 8, 8) 1px 1px 5px;
+  margin-bottom:5vh;
+} 
+
+.container-form{
+  margin-top: 0;
+  border-radius: 20px;
+  margin-top: 20vh;
+  background: rgb(250 250 250 / 16%);
+  box-shadow: 0 8px 32px 0 rgb(0 0 0 / 37%);
+  border-radius: 10px;
+  height: 50vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+input{
+  padding: 30px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  border-bottom: #5472ca 1px solid;
+}
+
+button{
+  margin: 10px auto;
+  width: 50%;
+  height: 50px;
+  border-radius: 40px;
+  border: none;
+  background: rgba(9, 9, 9, 0.422);
+  color: white ;
+  font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+button:hover{
+  background: rgba(6, 6, 6, 0.626);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
+</style>
 </head>
-<body>
-  <form  method="post">
-    <label for="nome">Nome</label>
-    <input id="nome" name="username" required>
-    <label for="senha">Senha</label>
-    <input type="password" id="senha" name="pass" required>
-    <button type="submit">Enviar</button>
-  </form>
+<body class="body">
+    <div class="container">
+      <div class="container-form">
+        <span class='titulo'>acesse sua conta</span>
+        <div class="form">
+          <form  method="post">
+          <input type='text' name="username" id="username"placeholder='Usuário'>
+          <input type="password" name="pass" id="pass" placeholder='Senha'>
+        </div>
+        <button type="submit">Entrar</button>
+      </div></form>
+    </div>
 </body>
+<footer></footer>
+
 </html>

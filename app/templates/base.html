@@ -8,8 +8,9 @@
 </head>
 
 <body>
-    <div id="header">Aqui é o header</div>
+    <div id="header"><a href="{{ url_for('Login.logout') }}">Sair</a></div>
     <div id="content">{% block conteudo %}{% endblock %}</div>
-    <div id="footer">Aqui é o footer</div>
+    
+    <div id="footer"></div>
 </body>
 </html>
