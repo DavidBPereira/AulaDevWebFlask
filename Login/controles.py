@@ -41,7 +41,6 @@ def post_login():
         resposta.set_cookie('id_sessao', id_sessao)
         return resposta
     else: 
-        msg = f'Login inválido'
         return redirect(url_for('.get_login'))
 
     
